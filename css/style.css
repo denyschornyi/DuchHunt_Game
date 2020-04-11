@@ -8,6 +8,7 @@ body{
     position: absolute;
     left: 50%;
     bottom: 50%;
+    animation: move-plate 10s ease 3 forwards;
 }
 .plate::before{
     content: '';
@@ -17,6 +18,25 @@ body{
     background-color: #fff;
     border-radius: 50%;
     transform: translate(-50%, -50%) rotateX(45deg);
-    
+}
 
+.plate:checked{
+    display: none;
+}
+
+@keyframes move-plate{
+    0%{
+        left: 50%;
+        bottom: 0%;
+        transform: translate(-50%, -50%) rotateX(45deg) scale(2);
+    }
+    50%{
+     bottom: 60%;
+    }
+    100%{
+        left: 50%;
+        bottom: 50%;
+        transform: translate(-50%, -50%) rotateX(45deg) scale(0);
+
+    }
 }
