@@ -20,7 +20,14 @@ body{
 }
 
 .plate:checked{
-    display: none;
+    opacity: 0;;
+}
+.plate:checked{
+    counter-increment: list;
+}
+
+.score:after{
+    content: counter(list);
 }
 .plate-1{
     animation: move-plate1 10s ease 3 forwards;
